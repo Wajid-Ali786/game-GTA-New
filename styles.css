@@ -45,6 +45,47 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     animation: bobbing 1.5s infinite;
 }
+#levelUpMessage {
+    position: absolute;
+    top: 30%;  /* Center vertically */
+    left: 50%;  /* Center horizontally */
+    transform: translate(-50%, -50%);  /* Adjust positioning to truly center */
+    margin-top: 30%;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 20px;
+    width: 60%;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    background: linear-gradient(45deg, #1f22db, #b11184); /* Gradient background */
+    border-radius: 15px;  /* Smooth rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Soft shadow around the message */
+    animation: slideIn 1s ease-out;  /* Slide-in animation */
+    display: none;  /* Initially hidden */
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -100%);  /* Starts above the screen */
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);  /* Ends at the center */
+        opacity: 1;
+    }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* Objects */
 .object {
@@ -72,4 +113,169 @@ body {
     50% {
         transform: translateY(5px);
     }
+}
+
+
+.level-display {
+    font-size: 18px; /* Make the text size readable */
+    font-weight: bold; /* Emphasize the text */
+    color: #fff; /* White text for better visibility */
+    background: linear-gradient(45deg, #025610,#93ca9c,#495602, #008861, #020680, #d9ff00); /* Add gradient background */
+    padding: 8px 16px; /* Add some spacing around the text */
+    border-radius: 12px; /* Rounded corners for a smooth look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+    display: inline-block; /* Ensure proper spacing in layouts */
+    text-align: center; /* Center-align the content */
+    animation: levelHighlight 0.3s ease; /* Subtle animation */
+}
+
+/* Animation for highlighting level change */
+@keyframes levelHighlight {
+    from {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* game starter button 
+start the game */
+
+#startButtonContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    text-align: center;
+}
+
+#startButton {
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff0080, #ff8c00);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#startButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#startButton:active {
+    transform: scale(0.95);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* end game
+        restart the game */
+        
+        #endGameOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+        }
+        
+        .endGameMessage {
+            background: linear-gradient(45deg, #ff0080, #ff8c00);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .endGameMessage h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .endGameMessage p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        #restartButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background: #00ff7f;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #restartButton:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        #restartButton:active {
+            transform: scale(0.95);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        /* pouse and play button 
+                            stop the game 
+                                    continous the game */
+                /* Pause/Play Button Styles */
+/* Style for Pause/Play Button */
+.pause-play-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 30px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pause-play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pause-play-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* FontAwesome Icon Styles */
+.pause-play-btn i {
+    font-size: 24px; /* Icon size */
+    transition: transform 0.2s ease;
+}
+
+.pause-play-btn:hover i {
+    transform: rotate(180deg); /* Smooth rotation when hovered */
 }

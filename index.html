@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Firing Game</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div id="startButtonContainer">
+        <button id="startButton">Start Game</button>
+    </div>
+    
+    <!-- Add this inside your <body> tag, preferably before the game area. -->
+
+
     <div id="gameArea">
+        <button id="pausePlayButton" class="pause-play-btn">
+            <i class="fas fa-pause"></i>
+        </button>
         <div id="player"></div>
         <div id="stats">
+            <span class="level-display">Level: <span id="level">1</span></span>
             <span>Score: <span id="score">0</span></span>
             <span>Health: <span id="health">100</span></span>
         </div>
+       
+        <div id="levelUpMessage"></div>
+         
     </div>
     <script src="script.js"></script>
 </body>
