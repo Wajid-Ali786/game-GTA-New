@@ -1,0 +1,75 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: url('assets/images/city-background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Game Area */
+#gameArea {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    border: 2px solid #444;
+}
+
+/* Stats Display */
+#stats {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Player */
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('assets/images/player-icon.png') no-repeat center center/contain;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: bobbing 1.5s infinite;
+}
+
+/* Objects */
+.object {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('assets/images/enemy-icon.png') no-repeat center center/contain;
+    animation: falling 5s linear infinite;
+}
+
+/* Animations */
+@keyframes falling {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
